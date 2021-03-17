@@ -1,32 +1,30 @@
 package edu.pingpong.furnace.main;
 
-
-// import org.foobarspam.furnaceDIP.hardware.GasHeater;
-// import org.foobarspam.furnaceDIP.hardware.Regulator;
-// import org.foobarspam.furnaceDIP.hardware.RemoteCommandSensor;
-// import org.foobarspam.furnaceDIP.interfaces.Heater;
-// import org.foobarspam.furnaceDIP.interfaces.Thermometer;
-// import org.foobarspam.furnaceDIP.otherstuff.Jedi;
-// import org.foobarspam.furnaceDIP.types.RoomTemperature;
+import edu.pingpong.furnace.domain.types.RoomTemperature;
+import edu.pingpong.furnace.domain.hardware.GasHeater;
+import edu.pingpong.furnace.domain.hardware.RemoteCommandSensor;
+import edu.pingpong.furnace.domain.hardware.RegulatorController;
+import edu.pingpong.furnace.domain.interfaces.*;
+import edu.pingpong.furnace.domain.otherStuff.Jedi;
 
 public class FurnaceApp 
 {
     public static void main( String[] args )
     {
-    	final double minTemp = 15.0;
-        final double maxTemp = 21.0;
+    	final double minTemp = 13.0;
+        final double maxTemp = 28.0;
         
         RoomTemperature temperature = new RoomTemperature(15);
         Heater heater = new GasHeater();
         Thermometer thermometer = new RemoteCommandSensor();
         
-        Regulator regulator = new Regulator();
+        Regulator regulator = new RegulatorController();
         
-        System.out.println( "Arrancando..." );
+        System.out.println( "\nArrancando...\n" );
         regulator.regulate(thermometer, heater, minTemp, maxTemp, temperature);
         
         Jedi yoda = new Jedi();
-        System.out.println( "\nArrancando a Yoda: " );
+        System.out.println( "\nArrancando a Yoda: \n" );
         regulator.regulate(thermometer, yoda, minTemp, maxTemp, temperature);
         yoda.speak();
     }
