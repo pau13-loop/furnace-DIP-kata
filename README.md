@@ -47,7 +47,7 @@ This kata has helped me a lot to understand more concretely the DIP Principle, a
 
 ![Furnace Diagram](./furnaceDiagram.png "UML")
 
-> This UML Diagram has been extracted from the book https://ivanderevianko.com/wp-content/uploads/2013/10/Agile-Principles-Patterns-and-Practices-in-C.pdf
+> This UML Diagram has been extracted from the book "Agile Principles, Patterns, and Practices in C#" of Martin C. Robert and Martin Micah
 
 ---
 
